@@ -1,8 +1,16 @@
 package Decorator;
 
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class Demo
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException
+    {
         String salaryRecords = "Name,Salary\nJohn Smith,100000\nSteven Jobs,912000";
         DataSourceDecorator encoded = new CompressionDecorator(
                 new EncryptionDecorator(
@@ -20,5 +28,13 @@ public class Demo
         System.out.println(plain.readData());
         System.out.println("- Decoded --------------");
         System.out.println(encoded.readData());
+
+        // 基础组件：读取文件
+        InputStream fis = new FileInputStream("data.txt");
+        // 装饰器1：添加缓冲功能
+        InputStream bis = new BufferedInputStream(fis);
+        // 装饰器2：添加数据解析功能
+        DataInputStream dis = new DataInputStream(bis);
     }
+
 }
