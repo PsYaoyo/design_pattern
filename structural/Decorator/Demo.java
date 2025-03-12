@@ -29,12 +29,12 @@ public class Demo
         System.out.println("- Decoded --------------");
         System.out.println(encoded.readData());
 
-        // 基础组件：读取文件
-        InputStream fis = new FileInputStream("data.txt");
-        // 装饰器1：添加缓冲功能
-        InputStream bis = new BufferedInputStream(fis);
-        // 装饰器2：添加数据解析功能
-        DataInputStream dis = new DataInputStream(bis);
+//        // 基础组件：读取文件
+//        InputStream fis = new FileInputStream("data.txt");
+//        // 装饰器1：添加缓冲功能
+//        InputStream bis = new BufferedInputStream(fis);
+//        // 装饰器2：添加数据解析功能
+//        DataInputStream dis = new DataInputStream(bis);
     }
 
 }
