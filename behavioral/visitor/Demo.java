@@ -24,6 +24,5 @@ public class Demo
     private static void export(Shape... shapes) {
         XMLExportVisitor exportVisitor = new XMLExportVisitor();
         System.out.println(exportVisitor.export(shapes));
-        System.out.println("hello world test code reviewer");
     }
 }
